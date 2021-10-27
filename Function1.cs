@@ -12,10 +12,10 @@ namespace FunctionApp48
 {
     public  class Function1
     {
-        private readonly ICrud crud;
-        Function1()
+        private readonly ICrud _crud;
+        Function1(ICrud crud)
         {
-
+            _crud = crud;
         }
 
         [FunctionName("Function1")]
@@ -28,7 +28,7 @@ namespace FunctionApp48
             string name = req.Query["name"];
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
+            User data = JsonConvert.DeserializeObject<User>(requestBody);
             name = name ?? data?.name;
 
             string responseMessage = "";
