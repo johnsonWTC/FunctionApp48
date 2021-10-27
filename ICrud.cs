@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FunctionApp47
+namespace FunctionApp48
 {
    public interface ICrud
     {
