@@ -29,8 +29,6 @@ namespace FunctionApp48
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             User data = JsonConvert.DeserializeObject<User>(requestBody);
-            name = name ?? data?.name;
-
             string responseMessage = "";
 
             return new OkObjectResult(responseMessage);
