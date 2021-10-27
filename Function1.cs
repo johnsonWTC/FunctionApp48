@@ -24,9 +24,7 @@ namespace FunctionApp48
         {
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             User data = JsonConvert.DeserializeObject<User>(requestBody);
-            string responseMessage = "";
-
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult(_crud.AddUser(data));
         }
     }
 }
