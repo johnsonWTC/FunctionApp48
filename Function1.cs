@@ -20,13 +20,8 @@ namespace FunctionApp48
 
         [FunctionName("Function1")]
         public  async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            ILogger log)
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-
-            string name = req.Query["name"];
-
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             User data = JsonConvert.DeserializeObject<User>(requestBody);
             string responseMessage = "";
