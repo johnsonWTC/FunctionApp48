@@ -15,7 +15,7 @@ namespace FunctionApp48
         public DbSet<User> Users { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=ASSET-10422\\SQLEXPRESS;Initial Catalog=FunctionCrud07;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data Source=ASSET-10422\\SQLEXPRESS;Initial Catalog=FunctionCrud08;Integrated Security=True");
         }
 
 
