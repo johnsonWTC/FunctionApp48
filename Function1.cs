@@ -13,7 +13,7 @@ namespace FunctionApp48
     public  class Function1
     {
         private readonly ICrud _crud;
-        Function1(ICrud crud)
+        public Function1(ICrud crud)
         {
             _crud = crud;
         }
@@ -24,7 +24,7 @@ namespace FunctionApp48
         {
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             User data = JsonConvert.DeserializeObject<User>(requestBody);
-            return new OkObjectResult(_crud.AddUser(data));
+            return new OkObjectResult("hey");
         }
     }
 }
